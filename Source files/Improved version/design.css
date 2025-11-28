@@ -1,0 +1,366 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --success-color: #4cc9f0;
+    --error-color: #f72585;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ccc 0%, #000 50%, #fff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.auth-header {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: block;
+}
+
+.auth-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #999, #000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 15px;
+}
+
+.auth-body {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.06);
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.input-with-toggle {
+    position: relative;
+}
+
+.input-with-toggle input {
+    padding-right: 45px;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Steps */
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.step-indicator::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.step.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.step.completed {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.step-label {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* Screens */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Review Box */
+.review-box {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+}
+
+/* Terms alignment (checkbox left, text right) */
+.terms-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.terms-row input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+.terms-row label {
+    margin: 0;
+}
+
+/* Password rules */
+.password-rules {
+    font-size: 0.9rem;
+    color: var(--error-color);
+    margin-top: 8px;
+    display: none;
+}
+
+/* Dashboard */
+.dashboard {
+    margin-top: 30px;
+    padding: 24px;
+    background: #f4f6f8;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+}
+
+/* Bin animation */
+.bin {
+    width: 160px;
+    height: 140px;
+    margin: 0 auto 16px;
+    position: relative;
+    background: linear-gradient(180deg,#e6e9ee,#cfd6dd);
+    border-radius: 6px;
+    box-shadow: inset 0 -6px 12px rgba(74, 68, 68, 0.06);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.bin .lid {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 190px;
+    height: 32px;
+    background: linear-gradient(90deg,#312a2a);
+    border-radius: 6px;
+    transform-origin: center bottom;
+    transition: transform 300ms ease;
+}
+
+.bin.open .lid {
+    transform: translateX(-50%) rotateX(60deg);
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-action {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #222;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-action:active {
+    transform: translateY(1px);
+}
+
+/* Toast notifications */
+#notifications {
+    position: fixed;
+    right: 18px;
+    top: 18px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toast {
+    background: #111;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 220ms, transform 220ms;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logout-bottom {
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px){
+    .input-row {
+        flex-direction: column;
+    }
+}

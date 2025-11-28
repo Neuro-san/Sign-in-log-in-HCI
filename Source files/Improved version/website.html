@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Authentication Flow — Updated</title>
+
+<link rel="stylesheet" href="design.css" />
+</head>
+
+<body>
+<div class="container">
+    <div class="auth-header">
+        <img class="logo" src="" alt="logo" />
+        <div class="auth-title">BINOVATE</div>
+    </div>
+
+    <div class="auth-body">
+
+        <!-- SIGN IN -->
+        <div id="signin-screen" class="screen active">
+            <div class="form-group">
+                <label for="username">Email or Username</label>
+                <div class="input-with-toggle">
+                    <input type="text" id="username" placeholder="Enter your email or username" />
+                </div>
+                <div id="username-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-with-toggle">
+                    <input type="password" id="password" placeholder="Enter your password" />
+                    <button class="toggle-btn password-toggle" data-target="password">👁️</button>
+                </div>
+                <div id="password-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group text-center">
+                <a href="#" id="forgot-password" class="link">Forgot Password?</a>
+            </div>
+
+            <button id="signin-btn" class="btn">Sign In</button>
+
+            <div class="text-center mt-20">
+                <p>Don't have an account? <a href="#" id="go-to-signup" class="link">Sign Up</a></p>
+            </div>
+        </div>
+
+        <!-- SIGN UP STEP 1 -->
+        <div id="signup-step1" class="screen">
+            <div class="step-indicator">
+                <div class="step active"><span>1</span><div class="step-label">Account</div></div>
+                <div class="step"><span>2</span><div class="step-label">Profile</div></div>
+                <div class="step"><span>3</span><div class="step-label">Confirm</div></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" />
+                <div id="email-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="new-password">Password</label>
+                <div class="input-with-toggle">
+                    <input type="password" id="new-password" placeholder="Create a password" />
+                    <button class="toggle-btn password-toggle" data-target="new-password">👁️</button>
+                </div>
+                <div id="new-password-error" class="error-message"></div>
+
+                <div id="password-rules" class="password-rules">
+                    Password must contain at least 8 characters, 1 uppercase, 1 lowercase, and 1 number.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="input-with-toggle">
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" />
+                    <button class="toggle-btn password-toggle" data-target="confirm-password">👁️</button>
+                </div>
+                <div id="confirm-password-error" class="error-message"></div>
+            </div>
+
+            <button id="step1-next" class="btn">Next</button>
+
+            <div class="text-center mt-20">
+                <p>Already have an account? <a href="#" id="go-to-signin-from-step1" class="link">Sign In</a></p>
+            </div>
+        </div>
+
+        <!-- SIGN UP STEP 2 -->
+        <div id="signup-step2" class="screen">
+            <div class="step-indicator">
+                <div class="step completed"><span>✓</span><div class="step-label">Account</div></div>
+                <div class="step active"><span>2</span><div class="step-label">Profile</div></div>
+                <div class="step"><span>3</span><div class="step-label">Confirm</div></div>
+            </div>
+
+            <div class="form-group input-row">
+                <div style="flex:1;">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" placeholder="Enter your first name" />
+                    <div id="first-name-error" class="error-message"></div>
+                </div>
+
+                <div style="flex:1;">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Enter your last name" />
+                    <div id="last-name-error" class="error-message"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter 11-digit phone number" />
+                <div id="phone-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="user-id">Trashbin ID</label>
+                <input type="text" id="user-id" placeholder="Enter trashbin ID" />
+                <div id="user-id-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="date-of-birth">Date of Birth</label>
+                <input type="date" id="date-of-birth" />
+                <div id="dob-error" class="error-message"></div>
+            </div>
+
+            <button id="step2-next" class="btn">Next</button>
+            <button id="step2-back" class="btn btn-secondary mt-20">Back</button>
+        </div>
+
+        <!-- SIGN UP STEP 3 -->
+        <div id="signup-step3" class="screen">
+            <div class="step-indicator">
+                <div class="step completed"><span>✓</span><div class="step-label">Account</div></div>
+                <div class="step completed"><span>✓</span><div class="step-label">Profile</div></div>
+                <div class="step active"><span>3</span><div class="step-label">Confirm</div></div>
+            </div>
+
+            <div class="form-group">
+                <p>Please review your information:</p>
+                <div id="review-info" class="review-box"></div>
+            </div>
+
+            <div class="form-group terms-row">
+                <input type="checkbox" id="terms" />
+                <label for="terms">
+                    I agree to the <a href="#" class="link">Terms of Service</a> and
+                    <a href="#" class="link">Privacy Policy</a>
+                </label>
+                <div id="terms-error" class="error-message"></div>
+            </div>
+
+            <button id="complete-registration" class="btn">Complete Registration</button>
+            <button id="step3-back" class="btn btn-secondary mt-20">Back</button>
+        </div>
+
+        <!-- WELCOME SCREEN -->
+        <div id="welcome-screen" class="screen">
+            <div class="success-message">Welcome!</div>
+
+            <div class="dashboard">
+                <div class="bin" id="bin">
+                    <div class="lid"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="open-lid" class="btn-action">Open Lid</button>
+                    <button id="close-lid" class="btn-action">Close Lid</button>
+                    <button id="compact" class="btn-action">Compact</button>
+                </div>
+
+                <button id="logout-btn" class="btn mt-20 logout-bottom">Log Out</button>
+            </div>
+
+            <div id="notifications"></div>
+        </div>
+
+        <!-- FORGOT PASSWORD -->
+        <div id="forgot-password-screen" class="screen">
+            <div class="form-group">
+                <p>We'll email you a link to reset your password.</p>
+
+                <label for="reset-email">Email Address</label>
+                <input id="reset-email" type="email" placeholder="Enter your email" />
+                <div id="reset-email-error" class="error-message"></div>
+
+                <div id="reset-status" class="success-message"></div>
+            </div>
+
+            <button id="send-reset-link" class="btn">Send Reset Link</button>
+
+            <div class="text-center mt-20">
+                <a href="#" id="back-to-signin" class="link">Back to Sign In</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="ambot.js"></script>
+</body>
+</html>
