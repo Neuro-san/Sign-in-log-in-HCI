@@ -19,5 +19,5 @@ Step 2: Open the 'Source file' folder (preferably in VSCode).
 Step 3: Open website.html into your prefer live server or browser.
 Step 4: Interact with the prototype interface to test features such as automatic lid opening, sensor status, and alerts simulated using JavaScript.
 
-note: html, css, and js should be in a single file before running or opening in the live server.
+note: html, css, and js should be in a single folder before running or opening in the live server.
 
